@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+
+
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <link href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" rel="stylesheet"/>
+
+        <link href="css/google-api.css" rel="stylesheet"/>
+
+        <title>PhotoLocator</title>
+    </head>
+<body>
+
+<a href="index.html" class="ui-btn ui-btn-b ui-corner-all">Home</a>
+<a href="google-api.html" class="ui-btn ui-btn-b ui-corner-all">Map</a>
+<a onclick='triggPhoto()' class="ui-btn ui-btn-b ui-corner-all">Load Pictures</a>
+
+
+    <div id='slider' class='swipe'>
+        <div id="pictures" class='swipe-wrap'>
+
+        </div>
+    </div>
+
+
+    <div id="on_success" data-role="popup" data-overlay-theme="a" data-theme="b" class="ui-content">
+        <p>SUCCESS - picture has been dowloaded to your photo gallery</p>
+        <a href="photo-place.html" class="ui-btn ui-btn-b ui-corner-all">OK</a>
+    </div>
+
+    <div id="on_fail" data-role="popup" data-overlay-theme="a" data-theme="b" class="ui-content">
+        <p>ERROR - cannot download picture, please check permissions for the app</p>
+        <a href="photo-place.html" class="ui-btn ui-btn-b ui-corner-all">OK</a>
+    </div>
+
+    <div id="on_success_wall" data-role="popup" data-overlay-theme="a" data-theme="b" class="ui-content">
+        <p>SUCCESS - picture has been dowloaded to your photo gallery AND set as WALLPAPER</p>
+        <a href="photo-place.html" class="ui-btn ui-btn-b ui-corner-all">OK</a>
+    </div>
+
+    <div id="on_fail_wall" data-role="popup" data-overlay-theme="a" data-theme="b" class="ui-content">
+        <p>ERROR - cannot download picture, please check permissions for the app [CANNOT SET PAPERWALL]</p>
+        <a href="photo-place.html" class="ui-btn ui-btn-b ui-corner-all">OK</a>
+    </div>
+
+
+    <script type="text/javascript" src="js/map.js"></script>
+</body>
+
+</html>
