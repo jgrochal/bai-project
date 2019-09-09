@@ -39,7 +39,7 @@ function GetMap(){
     try{
          map = new  Microsoft.Maps.Map(document.getElementById("mappp"),
          { 
-            credentials: flickr,
+            credentials: bing,
             mapTypeId:  Microsoft.Maps.MapTypeId.road,
             enableClickableLogo: false,
             enableSearchLogo: false,
