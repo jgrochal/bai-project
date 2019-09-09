@@ -2,7 +2,13 @@
 
 ## BAI
 
-BAI is an application that suggests You which Google photo to choose for a wallpaper depending on where you are at the moment.
+BAI is an application that suggests You which Google photo to choose for a wallpaper depending on Your location at the moment.
+
+<img src="uiflow4.PNG" alt="UI flow">
+<img src="uiflow5.PNG" alt="UI flow" >
+<img src="uiflow6.PNG" alt="UI flow" >
+
+
 
 ```markdown
 Syntax highlighted code block
@@ -28,21 +34,9 @@ For more details see [GitHub Flavored Markdown](https://guides.github.com/featur
 Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/programming-liftoff/hello-world/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 ### Go to:
 
-<a href="https://trello.com/baiprojekt1"><img src="trellosquare.png" style="width:82px; height:82px" title="Trello" alt="Trello"></a></pre>
-<a href="https://trello.com/baiprojekt1"><img src="mockplussquare.png" style="width:82px; height:82px" title="Mockplus" alt="Mockplus"></a></pre>
-<a href="https://trello.com/baiprojekt1"><img src="githubsquare.png" style="width:82px; height:82px" title="Github" alt="Github"></a>
-
-<div class="row">
-  <div class="column">
-    <img src="trellosquare.png" alt="Trello" style="width:100%">
-  </div>
-  <div class="column">
-    <img src="mockplussquare.png" alt="Mockplus" style="width:100%">
-  </div>
-  <div class="column">
-    <img src="githubsquare.png" alt="Github" style="width:100%">
-  </div>
-</div>
+<a href="https://trello.com/baiprojekt1"><img src="trellosquare.png" style="width:82px; height:82px" title="Trello" alt="Trello"></a>&nbsp;
+<a href="https://github.com/jgrochal/bai-project/tree/master/prototype"><img src="mockplussquare.png" style="width:82px; height:82px" title="Mockplus" alt="Mockplus"></a>&nbsp;
+<a href="https://github.com/jgrochal/bai-project"><img src="githubsquare.png" style="width:82px; height:82px" title="Github" alt="Github"></a>
 
 ### Created by
 
