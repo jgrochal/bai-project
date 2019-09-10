@@ -20,14 +20,15 @@ var Longitude = 19.939025;
 var tag = 'wallpaper,outdoor,nature,landscape,scenery,view,sight,city';
 var privacy = 1;
 var safe = 1;
-var content = 3;
-var context = 1;
+var content = 0;
+var context = 0;
+var per_page = 20;
 
 //API KEYS - DO NOT COMMITTTTTT!!!!!!!!!!!!!!
 
 
-var bing = 'ask Piotr';
-var flickr = 'ask Piotr';
+var bing = 'Au95D3vVitXBEgp4LWQ3Gyioe45ocpvci5-4rm7gmAta7Nlee0TcjhaOjWCa82e0';
+var flickr = 'bb671b3efd6619dcddcf3a3f59981d0c';
 
 
 //load map and set api settings
@@ -126,7 +127,7 @@ function getPictures(latitude, longitude) {
     var queryString =
     "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key="+flickr+"&lat="
     + latitude + "&lon=" + longitude + "&format=json&jsoncallback=?" + "&tags=" + tag + "&privacy_filter=" + privacy + "&safe_search=" + safe
-	+ "&content_type" + content + "&geo_context" + context;
+	+ "&content_type=" + content + "&geo_context=" + context + "&per_page=" + per_page;
 
     $.getJSON(queryString, function (results) {
         $.each(results.photos.photo, function (index, item) {
