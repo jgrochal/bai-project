@@ -7,17 +7,27 @@ var map;
 
 //test vars <- should be retriev automatically via gps 
 // set test to true if you dont want to use gps
-var isTest = false; 
+var isTest = true; 
 
-var Latitude = 47.603561;
-var Longitude = -122.329437;
+//Seattle
+//var Latitude = 47.603561;
+//var Longitude = -122.329437;
 
+//Krakow
+var Latitude = 50.057870;
+var Longitude = 19.939025;
+
+var tag = 'wallpaper,outdoor,nature,landscape,scenery,view,sight,city';
+var privacy = 1;
+var safe = 1;
+var content = 3;
+var context = 1;
 
 //API KEYS - DO NOT COMMITTTTTT!!!!!!!!!!!!!!
 
 
-var bing = 'Please ask Piotr';
-var flickr = 'Please ask Piotr';
+var bing = 'ask Piotr';
+var flickr = 'ask Piotr';
 
 
 //load map and set api settings
@@ -115,7 +125,8 @@ function getPictures(latitude, longitude) {
 
     var queryString =
     "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key="+flickr+"&lat="
-    + latitude + "&lon=" + longitude + "&format=json&jsoncallback=?";
+    + latitude + "&lon=" + longitude + "&format=json&jsoncallback=?" + "&tags=" + tag + "&privacy_filter=" + privacy + "&safe_search=" + safe
+	+ "&content_type" + content + "&geo_context" + context;
 
     $.getJSON(queryString, function (results) {
         $.each(results.photos.photo, function (index, item) {
