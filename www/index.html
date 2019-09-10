@@ -16,6 +16,9 @@
         <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
         <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
         <link href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" rel="stylesheet"/>
+	<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-auth.js"></script>
+        <script src="js/fb.js"></script>
         <title>PhotoLocator</title>
     </head>
 
@@ -30,10 +33,10 @@
 
         <div role="main" class="ui-content">
             <h2 class="mc-text-center">Welcome!</h2>
-            <p class="mc-top-margin-1-5"><b>Existing Users</b></p>
-            <a href="sign-in.html" class="ui-btn ui-btn-b ui-corner-all">Sign In</a>
-            <p class="mc-top-margin-1-5"><b>Don't have an account?</b></p>
-            <a href="sign-up.html" class="ui-btn ui-btn-b ui-corner-all">Sign Up</a>
+	    <input type="email" name="email" id="email" placeholder="E-mail"><br>
+	    <input type="password" id="password" name="password" placeholder="Password"><br>
+            <a onclick="emailLogin()" class="ui-btn ui-btn-b ui-corner-all">Sign In</a>
+            <a onclick="emailRegister()" class="ui-btn ui-btn-b ui-corner-all">Sign Up</a>
 
             <p class="mc-top-margin-1-5"><b>Test page for google API</b></p>
 
