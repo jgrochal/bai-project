@@ -28,6 +28,7 @@
     {
       // Actions after login - go to map?
       // document.body.append(`Logged in ${result.user.uid}`);
+      window.open('google-api.html');
     })
   }
 
