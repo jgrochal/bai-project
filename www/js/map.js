@@ -7,7 +7,7 @@ var map;
 
 //test vars <- should be retriev automatically via gps 
 // set test to true if you dont want to use gps
-var isTest = true; 
+var isTest = false; 
 
 //Seattle
 //var Latitude = 47.603561;
@@ -163,6 +163,7 @@ function downloadPic(url, setWallPaper){
       console.log('jestem success tapeta');
       $("#on_success_wall").popup("open");
     }  
+    insertIntoDb("downloadPic_uid", Latitude, Longitude, url);
   };
 
   var error = function(err){

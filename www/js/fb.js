@@ -46,7 +46,7 @@
   function insertIntoDb(uid, latit, longt, link)
   {
     const time = + new Date(); 
-    const insert = { user: uid, latitude: latit, longtitude: longt, image: link, timestamp: time };
+    const insert = { user: uid, latitude: latit, longitude: longt, image: link, timestamp: time };
     const db = firebase.firestore();
     var usersRef = db.collection("users");
     usersRef.add(insert);
