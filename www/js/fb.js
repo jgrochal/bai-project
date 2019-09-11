@@ -8,6 +8,7 @@
     messagingSenderId: "236592044371",
     appId: "1:236592044371:web:30117a478f018def1329a6"
   };
+
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   function emailRegister(){
@@ -30,3 +31,19 @@
   }
 
 
+  function testDb()
+  {
+    insertIntoDb("bl1", "lat1", "long1", "href1");
+    insertIntoDb("bl2", "lat2", "long2", "href2");
+    insertIntoDb("bl3", "lat3", "long3", "href3");
+    insertIntoDb("bl4", "lat4", "long4", "href4");
+  }
+
+  function insertIntoDb(uid, latit, longt, link)
+  {
+    const time = + new Date(); 
+    const insert = { user: uid, latitude: latit, longtitude: longt, image: link, timestamp: time };
+    const db = firebase.firestore();
+    var usersRef = db.collection("users");
+    usersRef.add(insert);
+  }
