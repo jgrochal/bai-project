@@ -11,6 +11,7 @@
 
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
+
   function emailRegister(){
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
@@ -30,6 +31,9 @@
     })
   }
 
+  function dummyFuncToCallSelectFromDb(){
+      console.log(getRecordsFromDbByUid("bl1"));
+  }
 
   function testDb()
   {
@@ -46,4 +50,23 @@
     const db = firebase.firestore();
     var usersRef = db.collection("users");
     usersRef.add(insert);
+  }
+
+
+  function getRecordsFromDbByUid(uid){
+    const db = firebase.firestore();
+    var queryResults = [];
+    db.collection("users").where("user", "==", uid)
+    .get()
+    .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            // doc.data() is never undefined for query doc snapshots
+            console.log(doc.id, " => ", doc.data());
+	    queryResults.push(doc.data());
+        });
+    })
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
+    });
+    return queryResults;
   }
