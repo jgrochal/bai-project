@@ -1,10 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.phonegap.helloworld" version="1.2.3"
-	xmlns="http://www.w3.org/ns/widgets" 
-	xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:cdv="http://cordova.apache.org/ns/1.0">
-
-	
+<widget id="com.phonegap.helloworld" version="1.2.3" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>BAI project</name>
     <description>
         Dowlnload new paperwall based on location!
@@ -12,16 +7,41 @@
     <author email="support@phonegap.com" href="http://phonegap.com">
         BAI group
     </author>
-
-
     <access origin="*" />
-
-
-	<platform name="android">
-	  <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
-	      <application android:usesCleartextTraffic="true" />
-	  </edit-config>
-	</platform>
-
-<preference name="android-minSdkVersion" value="26" />
+    <platform name="android">
+        <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
+            <application android:usesCleartextTraffic="true" />
+        </edit-config>
+    </platform>
+    <universal-links>
+        <host name="baiproject.page.link" scheme="https" />
+        <host name="projekt-bai.firebaseapp.com" scheme="https">
+            <path url="/__/auth/callback" />
+        </host>
+    </universal-links>
+    <preference name="android-minSdkVersion" value="26" />
+    <preference name="AndroidLaunchMode" value="singleTask" />
+    <plugin name="cordova-plugin-battery-status" />
+    <plugin name="cordova-plugin-camera" />
+    <plugin name="cordova-plugin-media-capture" />
+    <plugin name="cordova-plugin-console" />
+    <plugin name="cordova-plugin-contacts" />
+    <plugin name="cordova-plugin-device" />
+    <plugin name="cordova-plugin-device-motion" />
+    <plugin name="cordova-plugin-device-orientation" />
+    <plugin name="cordova-plugin-dialogs" />
+    <plugin name="cordova-plugin-file" />
+    <plugin name="cordova-plugin-file-transfer" />
+    <plugin name="cordova-plugin-geolocation" />
+    <plugin name="cordova-plugin-globalization" />
+    <plugin name="cordova-plugin-inappbrowser" />
+    <plugin name="cordova-plugin-media" />
+    <plugin name="cordova-plugin-network-information" />
+    <plugin name="cordova-plugin-splashscreen" />
+    <plugin name="cordova-plugin-statusbar" />
+    <plugin name="cordova-plugin-vibration" />
+    <plugin name="cordova-plugin-whitelist" />
+    <plugin name="cordova-universal-links-plugin" />
+    <plugin name="cordova-plugin-buildinfo" spec="^2.0.3" />
+    <plugin name="cordova-plugin-browsertab" spec="^0.2.0" />
 </widget>
