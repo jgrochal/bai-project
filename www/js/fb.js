@@ -12,6 +12,17 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
+//function logUser()
+//{
+//    var user = firebase.auth().currentUser;
+//
+//    if (user) {
+//        console.log(`Logged in ${result.user.uid}`);
+//    } else {
+//        console.log('No user logged in.');
+//    }
+//}
+
 function emailRegister()
 {
   var email = document.getElementById("email").value;
@@ -29,7 +40,18 @@ function emailLogin()
   firebase.auth().signInWithEmailAndPassword(email, password).then(result =>
   {
     console.log(`Logged in ${result.user.uid}`);
-    window.open('google-api.html');
+    window.location = 'google-api.html';
+  })
+}
+
+function testLogin()
+{
+  var email = "test@mail.il";
+  var password = "tttttt";
+  firebase.auth().signInWithEmailAndPassword(email, password).then(result =>
+  {
+    console.log(`Logged in ${result.user.uid}`);
+    window.location = 'google-api.html';
   })
 }
 
@@ -43,7 +65,6 @@ function googleLogin()
             var token = result.credential.accessToken; 
             var user = result.user;
             console.log(`Logged in ${user.uid}`);
-            document.write(`Logged in ${user.uid}`);
         })
         .catch(function(error)
         { 
@@ -61,7 +82,6 @@ function twitterLogin(){
             var token = result.credential.accessToken; 
             var user = result.user;
             console.log(`Logged in ${user.uid}`);
-            document.write(`Logged in ${user.uid}`);
         })
         .catch(function(error)
         { 
