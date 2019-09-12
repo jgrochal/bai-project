@@ -36,9 +36,10 @@
             <h2 class="mc-text-center">Welcome!</h2>
 	    <input type="email" name="email" id="email" placeholder="E-mail"><br>
 	    <input type="password" id="password" name="password" placeholder="Password"><br>
-            <a onclick="emailLogin()" class="ui-btn ui-btn-b ui-corner-all">Sign In</a>
-            <a onclick="emailRegister()" class="ui-btn ui-btn-b ui-corner-all">Sign Up</a>
-            <a onclick="" class="ui-btn ui-btn-b ui-corner-all">Sign In with Google</a>
+            <a id="emailLogin" class="ui-btn ui-btn-b ui-corner-all">Sign In</a>
+            <a id="emailRegister" class="ui-btn ui-btn-b ui-corner-all">Sign Up</a>
+            <a id="googleLogin" class="ui-btn ui-btn-b ui-corner-all">Sign In with Google</a>
+            <a id="twitterLogin" class="ui-btn ui-btn-b ui-corner-all">Sign In with Twitter</a>
 
             <p class="mc-top-margin-1-5"><b>Test page for google API</b></p>
 
@@ -46,6 +47,12 @@
             <a href="fileSystem.html" class="ui-btn ui-btn-b ui-corner-all">Test File system</a>
             <a onclick="testDb()" class="ui-btn ui-btn-b ui-corner-all">Test db</a>
             <p></p>
+	<script>
+            document.getElementById("twitterLogin").addEventListener("click", twitterLogin, false);
+            document.getElementById("googleLogin").addEventListener("click", googleLogin, false);
+            document.getElementById("emailLogin").addEventListener("click", emailLogin, false);
+            document.getElementById("emailRegister").addEventListener("click", emailRegister, false);
+	</script>
         </div><!-- /content -->
 
         <div data-role="footer">

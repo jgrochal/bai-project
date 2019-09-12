@@ -42,14 +42,29 @@
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-statusbar": {},
       "cordova-plugin-vibration": {},
-      "cordova-plugin-whitelist": {}
+      "cordova-plugin-whitelist": {},
+      "cordova-universal-links-plugin": {},
+      "cordova-plugin-buildinfo": {},
+      "cordova-plugin-browsertab": {},
+      "cordova-plugin-customurlscheme": {
+        "URL_SCHEME": "com.phonegap.helloworld",
+        "ANDROID_SCHEME": " ",
+        "ANDROID_HOST": " ",
+        "ANDROID_PATHPREFIX": "/"
+      }
     }
   },
   "dependencies": {
     "@ionic-native/file": "^4.3.3",
     "com.subitolabs.android.cordova.galleryapi": "file:../MediaScannerPlugin",
     "cordova-android": "^8.0.0",
+    "cordova-plugin-browsertab": "^0.2.0",
+    "cordova-plugin-buildinfo": "^2.0.3",
     "cordova-plugin-canvas2image": "file:../Canvas2ImagePlugin",
-    "cordova-plugin-wallpaper": "^0.1.1"
+    "cordova-plugin-compat": "^1.2.0",
+    "cordova-plugin-customurlscheme": "4.4.0",
+    "cordova-plugin-wallpaper": "^0.1.1",
+    "cordova-universal-links-plugin": "git+https://github.com/walteram/cordova-universal-links-plugin.git",
+    "cordova-universal-links-plugin-fix": "^1.2.1"
   }
 }
