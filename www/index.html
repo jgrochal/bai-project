@@ -29,7 +29,7 @@
     <div data-role="page" id="foo">
 
         <div data-role="header">
-            <h1>Foo</h1>
+            <h1>PhotoLocator</h1>
         </div><!-- /header -->
 
         <div role="main" class="ui-content">
@@ -42,22 +42,22 @@
             <a id="twitterLogin" class="ui-btn ui-btn-b ui-corner-all">Sign In with Twitter</a>
             <a id="testLogin" class="ui-btn ui-btn-b ui-corner-all">Sign In as Test User</a>
 
-            <p class="mc-top-margin-1-5"><b>Test page for google API</b></p>
-
-            <a href="google-api.html" class="ui-btn ui-btn-b ui-corner-all">go to google API</a>
-            <a href="fileSystem.html" class="ui-btn ui-btn-b ui-corner-all">Test File system</a>
-            <p></p>
 	<script>
             document.getElementById("twitterLogin").addEventListener("click", twitterLogin, false);
             document.getElementById("googleLogin").addEventListener("click", googleLogin, false);
             document.getElementById("emailLogin").addEventListener("click", emailLogin, false);
             document.getElementById("emailRegister").addEventListener("click", emailRegister, false);
             document.getElementById("testLogin").addEventListener("click", testLogin, false);
+            document.addEventListener("deviceready", function()
+            { 
+                window.requestFileSystem(LocalFileSystem.PERSISTENT, 0);
+            }, false);
 	</script>
         </div><!-- /content -->
 
         <div data-role="footer">
-            <h4>Page Footer</h4>
+            <!--h4>Page Footer</h4-->
+            <h4></h4>
         </div><!-- /footer -->
     </div><!-- /page -->
 </body>

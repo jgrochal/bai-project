@@ -163,7 +163,6 @@ function downloadPic(url, setWallPaper){
       console.log('jestem success tapeta');
       $("#on_success_wall").popup("open");
     }  
-    insertIntoDb("downloadPic_uid", Latitude, Longitude, url);
   };
 
   var error = function(err){
@@ -182,6 +181,7 @@ function downloadPic(url, setWallPaper){
   };
 
   saveImageToPhone(url, setWallPaper, success, error);
+  insertIntoDb("downloadPic_uid", Latitude, Longitude, url);
 }
 
 

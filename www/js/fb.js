@@ -33,6 +33,12 @@ function emailRegister()
   })
 }
 
+function signOut()
+{
+    firebase.auth().signOut();
+    window.location = 'index.html';
+}
+
 function emailLogin()
 {
   var email = document.getElementById("email").value;
