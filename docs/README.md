@@ -24,6 +24,11 @@ Main page with map with Your location
 
 Scroll and pick Your favourite photo
 
+### Use case diagram:
+
+<img src="diagram.PNG" alt="Use case diagram" >
+
+
 ### Go to:
 
 <a href="https://trello.com/baiprojekt1"><img src="trellosquare.png" style="width:82px; height:82px" title="Trello" alt="Trello"></a>&nbsp;
