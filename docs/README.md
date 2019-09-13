@@ -8,30 +8,10 @@ BAI is an application that suggests You which Google photo to choose for a wallp
 <img src="uiflow5.PNG" alt="UI flow" >
 <img src="uiflow6.PNG" alt="UI flow" >
 
+The purpose of the application is to help users save photos from where they are at the moment, the pictures are saved in the database, you can always return to them
 
+Application is implemented using technologies and frameworks as: Cordova PhoneGap Bootstrap jQueryMobile Firebase
 
-```markdown
-Syntax highlighted code block
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](https://https://www.mniammniam.com/obrazki/sledz_chlopsku.jpg)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/programming-liftoff/hello-world/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 ### Go to:
 
 <a href="https://trello.com/baiprojekt1"><img src="trellosquare.png" style="width:82px; height:82px" title="Trello" alt="Trello"></a>&nbsp;
