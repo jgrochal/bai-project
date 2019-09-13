@@ -1,12 +1,7 @@
-![Image](https://github.com/lusniak/bai/blob/master/docs/bai_page2.png?raw=true)
 
 ## PhotoLocator
 
 PhotoLocator is an application that suggests You which Google photo to choose for a wallpaper depending on Your location at the moment.
-
-<img src="uiflow4.PNG" alt="UI flow">
-<img src="uiflow5.PNG" alt="UI flow" >
-<img src="uiflow6.PNG" alt="UI flow" >
 
 Project is realised as part of Rich Internet Aplications course at Cracow University of Economics
 
@@ -20,7 +15,7 @@ Application is implemented using technologies and frameworks as: Cordova PhoneGa
 
 Sign In possible with e-mail, Google account and Twitter account
 
-<img src="main.PNG" alt="Main page" >
+<img src="main1.PNG" alt="Main page" >
 
 Main page with map with Your location
 
