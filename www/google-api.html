@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+        <!--<script src="https://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0&s=1"></script> 
+            <script src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=Au95D3vVitXBEgp4LWQ3Gyioe45ocpvci5-4rm7gmAta7Nlee0TcjhaOjWCa82e0' async defer></script>
+
+-->
+        <link href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" rel="stylesheet"/>
+	<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-firestore.js"></script>
+
+        <link href="css/google-api.css" rel="stylesheet"/>
+
+
+        <title>PhotoLocator</title>
+    </head>
+    <body>
+
+    <a id="signOut" class="ui-btn ui-btn-b ui-corner-all">Sign Out</a>
+    <a id="switchPhotos" class="ui-btn ui-btn-b ui-corner-all">Switch to Photo Picking</a>
+    <a id="loadMap" class="ui-btn ui-btn-b ui-corner-all">Load Map</a>
+
+
+    <div id="mappp" style="position:relative;width:1000px;height:800px;"></div>
+
+    <script type="text/javascript" src="js/map.js"></script>
+    <script src="js/fb.js"></script>
+
+    <script>
+        firebase.auth().onAuthStateChanged(function(currentUser) 
+        {
+            if (currentUser) 
+            {
+                console.log(`Current user: ${currentUser.uid}`);
+                document.getElementById("signOut").addEventListener("click", signOut, false);
+                document.getElementById("switchPhotos")
+                    .addEventListener("click", function(){ window.location = 'photo-place.html';}, false);
+                document.getElementById("loadMap").addEventListener("click", loadMap, false);
+            }
+            else
+            {
+                window.location = 'index.html';
+            }
+        });
+    </script>
+
+    </body>
+
+</html>
