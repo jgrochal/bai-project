@@ -11,7 +11,6 @@ var firebaseConfig = {
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
 
 function emailRegister()
 {
@@ -61,6 +60,7 @@ function googleLogin()
             var token = result.credential.accessToken; 
             var user = result.user;
             console.log(`Logged in ${user.uid}`);
+            window.location = 'google-api.html';
         })
         .catch(function(error)
         { 
@@ -78,6 +78,7 @@ function twitterLogin(){
             var token = result.credential.accessToken; 
             var user = result.user;
             console.log(`Logged in ${user.uid}`);
+            window.location = 'google-api.html';
         })
         .catch(function(error)
         { 
@@ -101,8 +102,9 @@ function insertIntoDb(uid, latit, longt, link)
 
 
 function getRecordsFromDbByUid(uid){
+  const db = firebase.firestore();
   var queryResults = [];
-  db.collection("users").where("user", "==", uid)
+  db.collection("users").where("user", "==", uid).orderBy("timestamp", "desc")
   .get()
   .then(function(querySnapshot) {
       querySnapshot.forEach(function(doc) {
