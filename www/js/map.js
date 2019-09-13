@@ -84,20 +84,21 @@ function GetMap(){
 
 //FLICKR API
 // Get geo coordinates - teporary disabled in order to be able to check func in browser
-function getPicturesLocation() {
+function getPicturesLocation(uid) {
 
-    navigator.geolocation.getCurrentPosition(onPicturesSuccess, onPicturesError, { enableHighAccuracy: true });
+    navigator.geolocation.getCurrentPosition(function(position){ onPicturesSuccess(position, uid);} , onPicturesError, { enableHighAccuracy: true });
 }
 
 // Success callback for get geo coordinates
 
 
-var onPicturesSuccess = function (position) {
+var onPicturesSuccess = function (position, uid) {
 
+    console.log(`Success (${uid})`);
     Latitude = position.coords.latitude;
     Longitude = position.coords.longitude;
 
-    getPictures(Latitude, Longitude);
+    getPictures(uid, Latitude, Longitude);
 }
 
 // Error callback
@@ -109,17 +110,17 @@ function onPicturesError(error) {
 }
 
 
-function triggPhoto(){
-
+function triggPhoto(uid){
+    console.log(`User id: ${uid}`);
     if(isTest){
-      getPictures(Latitude, Longitude);
+      getPictures(uid, Latitude, Longitude);
     } else {
-      getPicturesLocation();
+      getPicturesLocation(uid);
     }  
 }
 
 // Get pictures by using coordinates
-function getPictures(latitude, longitude) {
+function getPictures(uid, latitude, longitude) {
 
     console.log('clicked pictures');
     $('#pictures').empty();
@@ -134,7 +135,7 @@ function getPictures(latitude, longitude) {
 
             var photoURL = "http://farm" + item.farm + ".static.flickr.com/" +
                 item.server + "/" + item.id + "_" + item.secret + ".jpg";
-            $('#pictures').append("<div><img src=" + photoURL+"><a onclick=downloadPic(" + '\'' + photoURL +  '\',' + false + ") class='ui-btn ui-btn-b ui-corner-all'>Download</a><a onclick=downloadPic(" + '\'' + photoURL +  '\',' + true + ") class='ui-btn ui-btn-b ui-corner-all'>Set as Wallpaper</a></div>");
+            $('#pictures').append("<div><img src=" + photoURL+"><a onclick=downloadPic(\'" + uid + "\'," + '\'' + photoURL +  '\',' + false + ") class='ui-btn ui-btn-b ui-corner-all'>Download</a><a onclick=downloadPic(\'" + uid + "\'," + '\'' + photoURL +  '\',' + true + ") class='ui-btn ui-btn-b ui-corner-all'>Set as Wallpaper</a></div>");
 
            });
         }
@@ -146,7 +147,7 @@ function getPictures(latitude, longitude) {
 
 //'Validate URL and trigger function'
 
-function downloadPic(url, setWallPaper){
+function downloadPic(uid, url, setWallPaper){
   console.log('URL is:' + url);
 
   var success = function(msg){
@@ -181,7 +182,7 @@ function downloadPic(url, setWallPaper){
   };
 
   saveImageToPhone(url, setWallPaper, success, error);
-  insertIntoDb("downloadPic_uid", Latitude, Longitude, url);
+  insertIntoDb(uid, Latitude, Longitude, url);
 }
 
 

@@ -63,13 +63,14 @@
             if (currentUser) 
             {
                 console.log(`Current user: ${currentUser.uid}`);
+                var uid = currentUser.uid;
                 window.requestFileSystem(LocalFileSystem.PERSISTENT, 0,
                                          function(fileSystem){console.log(fileSystem.name);},
                                          function(){console.log('Failed loading fileSystem');});
                 document.getElementById("signOut").addEventListener("click", signOut, false);
                 document.getElementById("switchMap")
                     .addEventListener("click", function(){ window.location = 'google-api.html';}, false);
-                document.getElementById("triggPhoto").addEventListener("click", triggPhoto, false);
+                document.getElementById("triggPhoto").addEventListener("click", function(){ triggPhoto(uid); }, false);
             }
             else
             {
