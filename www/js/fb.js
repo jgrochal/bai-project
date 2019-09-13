@@ -90,32 +90,6 @@ function dummyFuncToCallSelectFromDb(){
     console.log(getRecordsFromDbByUid("bl1"));
 }
 
-function getRandomLocation()
-{
-  var queryResult = [];
-  db.collection("locations").where("latitude", "<", 500).limit(20).get()
-  .then(function(querySnapshot) {
-      querySnapshot.forEach(function(doc) {
-          var tmp = doc.data();
-          queryResult.push(doc.data().latitude);
-      });
-  })
-  .catch(function(error) {
-      console.log("Error getting documents: ", error);
-  });
-  //var shuffled = shuffle(queryResult);
-  var result = queryResult; 
-  return result;
-}
-
-//function shuffle(a) {
-//    for (let i = a.length - 1; i > 0; i--) {
-//        const j = Math.floor(Math.random() * (i + 1));
-//        [a[i], a[j]] = [a[j], a[i]];
-//    }
-//    return a;
-//}
-
 function insertIntoDb(uid, latit, longt, link)
 {
   const time = + new Date(); 

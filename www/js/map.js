@@ -120,9 +120,9 @@ function triggPhoto(uid){
     }  
 }
 
-function triggRandPhoto(uid, loc)
+function triggRandPhoto(uid, la, lo)
 {
-//
+    getPictures(uid, la, lo);
 }
 
 // Get pictures by using coordinates

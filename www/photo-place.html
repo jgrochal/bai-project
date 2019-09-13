@@ -57,6 +57,7 @@
 
     <script type="text/javascript" src="js/map.js"></script>
     <script type="text/javascript" src="js/fb.js"></script>
+    <script type="text/javascript" src="js/blob.js"></script>
     <script>
         //app.initialize();
         firebase.auth().onAuthStateChanged(function(currentUser) 
@@ -72,10 +73,8 @@
                 document.getElementById("switchMap")
                     .addEventListener("click", function(){ window.location = 'google-api.html';}, false);
                 document.getElementById("triggPhoto").addEventListener("click", function(){ triggPhoto(uid); }, false);
-                var randLoc = getRandomLocation();
-                console.log(`Random: ${randLoc}`);
-                document.getElementById("triggRandPhoto").addEventListener("click", function(){ triggRandPhoto(uid, randLoc); }, false);
-            }
+                document.getElementById("triggRandPhoto").addEventListener("click", function(){ var randLoc = getRandomLocation(); triggRandPhoto(uid, randLoc.latitude, randLoc.longitude); }, false);
+                            }
             else
             {
                 window.location = 'index.html';
