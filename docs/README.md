@@ -26,7 +26,7 @@ Scroll and pick Your favourite photo
 
 ### Use case diagram:
 
-<img src="diagram.PNG" alt="Use case diagram" >
+<img src="diagram1.PNG" alt="Use case diagram" >
 
 
 ### Go to:
