@@ -8,6 +8,10 @@ BAI is an application that suggests You which Google photo to choose for a wallp
 <img src="uiflow5.PNG" alt="UI flow" >
 <img src="uiflow6.PNG" alt="UI flow" >
 
+Project is realised as part of Rich Internet Aplications course at Cracow University of Economics
+
+The main requirement is to create an cross-platform app.
+
 The purpose of the application is to help users save photos from where they are at the moment, the pictures are saved in the database, you can always return to them
 
 Application is implemented using technologies and frameworks as: Cordova PhoneGap Bootstrap jQueryMobile Firebase
