@@ -1,0 +1,11 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "BAI project",
+  "short_name": "BAI project",
+  "version": "com.phonegap.helloworld",
+  "description": "Dowlnload new paperwall based on location!",
+  "author": "BAI group",
+  "icons": [],
+  "start_url": "index.html"
+}

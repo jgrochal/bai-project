@@ -1,11 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.phonegap.helloworld" version="1.2.3" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <feature name="Camera">
-        <param name="browser-package" value="Camera" />
-    </feature>
-    <feature name="Device">
-        <param name="browser-package" value="Device" />
-    </feature>
     <name>BAI project</name>
     <description>
         Dowlnload new paperwall based on location!
@@ -14,5 +8,12 @@
         BAI group
     </author>
     <access origin="*" />
+    <universal-links>
+        <host name="baiproject.page.link" scheme="https" />
+        <host name="projekt-bai.firebaseapp.com" scheme="https">
+            <path url="/__/auth/callback" />
+        </host>
+    </universal-links>
     <preference name="android-minSdkVersion" value="26" />
+    <preference name="AndroidLaunchMode" value="singleTask" />
 </widget>

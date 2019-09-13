@@ -11,15 +11,20 @@
         <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
         <link href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" rel="stylesheet"/>
 
+        <script type="text/javascript" src="cordova.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-firestore.js"></script>
         <link href="css/google-api.css" rel="stylesheet"/>
 
         <title>PhotoLocator</title>
     </head>
 <body>
 
-<a href="index.html" class="ui-btn ui-btn-b ui-corner-all">Home</a>
-<a href="google-api.html" class="ui-btn ui-btn-b ui-corner-all">Map</a>
-<a onclick='triggPhoto()' class="ui-btn ui-btn-b ui-corner-all">Load Pictures</a>
+<a id="signOut" class="ui-btn ui-btn-b ui-corner-all">Sign Out</a>
+<a id="switchMap" class="ui-btn ui-btn-b ui-corner-all">Switch to Map</a>
+<a id="triggPhoto" class="ui-btn ui-btn-b ui-corner-all">Load Pictures from Current Location</a>
+<a id="triggRandPhoto" class="ui-btn ui-btn-b ui-corner-all">Load Pictures from Random Location</a>
 
 
     <div id='slider' class='swipe'>
@@ -51,6 +56,33 @@
 
 
     <script type="text/javascript" src="js/map.js"></script>
+    <script type="text/javascript" src="js/fb.js"></script>
+    <script type="text/javascript" src="js/blob.js"></script>
+    <script>
+        //app.initialize();
+        firebase.auth().onAuthStateChanged(function(currentUser) 
+        {
+            if (currentUser) 
+            {
+                console.log(`Current user: ${currentUser.uid}`);
+                var uid = currentUser.uid;
+                window.requestFileSystem(LocalFileSystem.PERSISTENT, 0,
+                                         function(fileSystem){console.log(fileSystem.name);},
+                                         function(){console.log('Failed loading fileSystem');});
+                document.getElementById("signOut").addEventListener("click", signOut, false);
+                document.getElementById("switchMap")
+                    .addEventListener("click", function(){ window.location = 'google-api.html';}, false);
+                document.getElementById("triggPhoto").addEventListener("click", function(){ triggPhoto(uid); }, false);
+                document.getElementById("triggRandPhoto").addEventListener("click", function(){ var randLoc = getRandomLocation(); triggRandPhoto(uid, randLoc.latitude, randLoc.longitude); }, false);
+                console.log(`User history: ${getRecordsFromDbByUid(uid)}`);
+                            }
+            else
+            {
+                window.location = 'index.html';
+            }
+        });
+    </script>
+
 </body>
 
 </html>

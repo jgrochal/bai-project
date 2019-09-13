@@ -10,4 +10,6 @@ public final class BuildConfig {
   public static final String FLAVOR = "";
   public static final int VERSION_CODE = 10203;
   public static final String VERSION_NAME = "1.2.3";
+  // Fields from default config.
+  public static final long _BUILDINFO_TIMESTAMP = 1568381948336L;
 }

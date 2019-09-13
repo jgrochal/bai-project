@@ -54,6 +54,19 @@
     <feature name="wallpaper">
         <param name="android-package" value="fc.fcstudio.wallpaper" />
     </feature>
+    <feature name="UniversalLinks">
+        <param name="android-package" value="com.nordnetab.cordova.ul.UniversalLinksPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="BuildInfo">
+        <param name="android-package" value="org.apache.cordova.buildinfo.BuildInfo" />
+    </feature>
+    <feature name="BrowserTab">
+        <param name="android-package" value="com.google.cordova.plugin.browsertab.BrowserTab" />
+    </feature>
+    <feature name="LaunchMyApp">
+        <param name="android-package" value="nl.xservices.plugins.LaunchMyApp" />
+    </feature>
     <name>BAI project</name>
     <description>
         Dowlnload new paperwall based on location!
@@ -62,9 +75,16 @@
         BAI group
     </author>
     <access origin="*" />
+    <universal-links>
+        <host name="baiproject.page.link" scheme="https" />
+        <host name="projekt-bai.firebaseapp.com" scheme="https">
+            <path url="/__/auth/callback" />
+        </host>
+    </universal-links>
     <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
         <application android:usesCleartextTraffic="true" />
     </edit-config>
     <preference name="loglevel" value="DEBUG" />
     <preference name="android-minSdkVersion" value="26" />
+    <preference name="AndroidLaunchMode" value="singleTask" />
 </widget>

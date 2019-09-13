@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Piotrek\\Desktop\\BAI\\BAI project\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\values_values.arsc.flat",
+            "outputFile": "/home/joanna/workspace/bai/bai-project/platforms/android/app/build/intermediates/res/merged/debug/values_values.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\Piotrek\\Desktop\\BAI\\BAI project\\platforms\\android\\app\\src\\main\\res\\values\\strings.xml",
+                    "source": "/home/joanna/workspace/bai/bai-project/platforms/android/app/src/main/res/values/strings.xml",
                     "from": {
                         "startLines": "4,2,3",
                         "startColumns": "4,4,4",

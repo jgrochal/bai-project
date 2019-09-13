@@ -60,6 +60,22 @@
     },
     "cordova-plugin-wallpaper": {
       "PACKAGE_NAME": "com.phonegap.helloworld"
+    },
+    "cordova-universal-links-plugin": {
+      "PACKAGE_NAME": "com.phonegap.helloworld"
+    },
+    "cordova-plugin-buildinfo": {
+      "PACKAGE_NAME": "com.phonegap.helloworld"
+    },
+    "cordova-plugin-browsertab": {
+      "PACKAGE_NAME": "com.phonegap.helloworld"
+    },
+    "cordova-plugin-customurlscheme": {
+      "URL_SCHEME": "com.phonegap.helloworld",
+      "ANDROID_SCHEME": " ",
+      "ANDROID_HOST": " ",
+      "ANDROID_PATHPREFIX": "/",
+      "PACKAGE_NAME": "com.phonegap.helloworld"
     }
   },
   "dependent_plugins": {}

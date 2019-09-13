@@ -9,15 +9,26 @@ var map;
 // set test to true if you dont want to use gps
 var isTest = false; 
 
-var Latitude = 47.603561;
-var Longitude = -122.329437;
+//Seattle
+//var Latitude = 47.603561;
+//var Longitude = -122.329437;
 
+//Krakow
+var Latitude = 50.057870;
+var Longitude = 19.939025;
+
+var tag = 'wallpaper,outdoor,nature,landscape,scenery,view,sight,city';
+var privacy = 1;
+var safe = 1;
+var content = 0;
+var context = 0;
+var per_page = 20;
 
 //API KEYS - DO NOT COMMITTTTTT!!!!!!!!!!!!!!
 
 
-var bing = 'Please ask Piotr';
-var flickr = 'Please ask Piotr';
+var bing = 'Au95D3vVitXBEgp4LWQ3Gyioe45ocpvci5-4rm7gmAta7Nlee0TcjhaOjWCa82e0';
+var flickr = 'bb671b3efd6619dcddcf3a3f59981d0c';
 
 
 //load map and set api settings
@@ -39,7 +50,7 @@ function GetMap(){
     try{
          map = new  Microsoft.Maps.Map(document.getElementById("mappp"),
          { 
-            credentials: flickr,
+            credentials: bing,
             mapTypeId:  Microsoft.Maps.MapTypeId.road,
             enableClickableLogo: false,
             enableSearchLogo: false,
@@ -73,20 +84,21 @@ function GetMap(){
 
 //FLICKR API
 // Get geo coordinates - teporary disabled in order to be able to check func in browser
-function getPicturesLocation() {
+function getPicturesLocation(uid) {
 
-    navigator.geolocation.getCurrentPosition(onPicturesSuccess, onPicturesError, { enableHighAccuracy: true });
+    navigator.geolocation.getCurrentPosition(function(position){ onPicturesSuccess(position, uid);} , onPicturesError, { enableHighAccuracy: true });
 }
 
 // Success callback for get geo coordinates
 
 
-var onPicturesSuccess = function (position) {
+var onPicturesSuccess = function (position, uid) {
 
+    console.log(`Success (${uid})`);
     Latitude = position.coords.latitude;
     Longitude = position.coords.longitude;
 
-    getPictures(Latitude, Longitude);
+    getPictures(uid, Latitude, Longitude);
 }
 
 // Error callback
@@ -98,31 +110,38 @@ function onPicturesError(error) {
 }
 
 
-function triggPhoto(){
 
+function triggPhoto(uid){
+    console.log(`User id: ${uid}`);
     if(isTest){
-      getPictures(Latitude, Longitude);
+      getPictures(uid, Latitude, Longitude);
     } else {
-      getPicturesLocation();
+      getPicturesLocation(uid);
     }  
 }
 
+function triggRandPhoto(uid, la, lo)
+{
+    getPictures(uid, la, lo);
+}
+
 // Get pictures by using coordinates
-function getPictures(latitude, longitude) {
+function getPictures(uid, latitude, longitude) {
 
     console.log('clicked pictures');
     $('#pictures').empty();
 
     var queryString =
-    "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=
-    + latitude + "&lon=" + longitude + "&format=json&jsoncallback=?";
+    "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key="+flickr+"&lat="
+    + latitude + "&lon=" + longitude + "&format=json&jsoncallback=?" + "&tags=" + tag + "&privacy_filter=" + privacy + "&safe_search=" + safe
+	+ "&content_type=" + content + "&geo_context=" + context + "&per_page=" + per_page;
 
     $.getJSON(queryString, function (results) {
         $.each(results.photos.photo, function (index, item) {
 
             var photoURL = "http://farm" + item.farm + ".static.flickr.com/" +
                 item.server + "/" + item.id + "_" + item.secret + ".jpg";
-            $('#pictures').append("<div><img src=" + photoURL+"><a onclick=downloadPic(" + '\'' + photoURL +  '\',' + false + ") class='ui-btn ui-btn-b ui-corner-all'>Download</a><a onclick=downloadPic(" + '\'' + photoURL +  '\',' + true + ") class='ui-btn ui-btn-b ui-corner-all'>Set as Wallpaper</a></div>");
+            $('#pictures').append("<div><img src=" + photoURL+"><a onclick=downloadPic(\'" + uid + "\'," + '\'' + photoURL +  '\',' + false + ") class='ui-btn ui-btn-b ui-corner-all'>Download</a><a onclick=downloadPic(\'" + uid + "\'," + '\'' + photoURL +  '\',' + true + ") class='ui-btn ui-btn-b ui-corner-all'>Set as Wallpaper</a></div>");
 
            });
         }
@@ -134,7 +153,7 @@ function getPictures(latitude, longitude) {
 
 //'Validate URL and trigger function'
 
-function downloadPic(url, setWallPaper){
+function downloadPic(uid, url, setWallPaper){
   console.log('URL is:' + url);
 
   var success = function(msg){
@@ -169,6 +188,7 @@ function downloadPic(url, setWallPaper){
   };
 
   saveImageToPhone(url, setWallPaper, success, error);
+  insertIntoDb(uid, Latitude, Longitude, url);
 }
 
 

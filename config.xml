@@ -41,7 +41,13 @@
     <plugin name="cordova-plugin-statusbar" />
     <plugin name="cordova-plugin-vibration" />
     <plugin name="cordova-plugin-whitelist" />
-    <plugin name="cordova-universal-links-plugin" />
+    <plugin name="cordova-universal-links-plugin" spec="git+https://github.com/walteram/cordova-universal-links-plugin.git" />
     <plugin name="cordova-plugin-buildinfo" spec="^2.0.3" />
     <plugin name="cordova-plugin-browsertab" spec="^0.2.0" />
+    <plugin name="cordova-plugin-customurlscheme" spec="4.4.0">
+        <variable name="URL_SCHEME" value="com.phonegap.helloworld" />
+        <variable name="ANDROID_SCHEME" value=" " />
+        <variable name="ANDROID_HOST" value=" " />
+        <variable name="ANDROID_PATHPREFIX" value="/" />
+    </plugin>
 </widget>
