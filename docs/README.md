@@ -9,15 +9,16 @@ The main requirement is to create an cross-platform app.
 
 The purpose of the application is to help users save photos from where they are at the moment, the pictures are saved in the database, you can always return to them
 
-Application is implemented using technologies and frameworks as: Cordova PhoneGap Bootstrap jQueryMobile Firebase
 
 <img src="login.PNG" alt="Log In page">
 
 Sign In possible with e-mail, Google account and Twitter account
 
+
 <img src="main1.PNG" alt="Main page" >
 
 Main page with map with Your location
+
 
 <img src="pickphoto.PNG" alt="Pick a photo" >
 
