@@ -26,9 +26,9 @@
     </head>
     <body>
 
-    <a href="index.html" class="ui-btn ui-btn-b ui-corner-all">return</a>
-    <a href="photo-place.html" class="ui-btn ui-btn-b ui-corner-all">Photo Place</a>
-    <a onclick='loadMap()' class="ui-btn ui-btn-b ui-corner-all">Load Map</a>
+    <a id="signOut" class="ui-btn ui-btn-b ui-corner-all">Sign Out</a>
+    <a id="switchPhotos" class="ui-btn ui-btn-b ui-corner-all">Switch to Photo Picking</a>
+    <a id="loadMap" class="ui-btn ui-btn-b ui-corner-all">Load Map</a>
 
 
     <div id="mappp" style="position:relative;width:1000px;height:800px;"></div>
@@ -42,6 +42,10 @@
             if (currentUser) 
             {
                 console.log(`Current user: ${currentUser.uid}`);
+                document.getElementById("signOut").addEventListener("click", signOut, false);
+                document.getElementById("switchPhotos")
+                    .addEventListener("click", function(){ window.location = 'photo-place.html';}, false);
+                document.getElementById("loadMap").addEventListener("click", loadMap, false);
             }
             else
             {

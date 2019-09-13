@@ -11,7 +11,6 @@
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
 
-        <script>app.initialize();</script>
 
         <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
         <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
@@ -29,7 +28,7 @@
     <div data-role="page" id="foo">
 
         <div data-role="header">
-            <h1>Foo</h1>
+            <h1>PhotoLocator</h1>
         </div><!-- /header -->
 
         <div role="main" class="ui-content">
@@ -42,11 +41,7 @@
             <a id="twitterLogin" class="ui-btn ui-btn-b ui-corner-all">Sign In with Twitter</a>
             <a id="testLogin" class="ui-btn ui-btn-b ui-corner-all">Sign In as Test User</a>
 
-            <p class="mc-top-margin-1-5"><b>Test page for google API</b></p>
-
-            <a href="google-api.html" class="ui-btn ui-btn-b ui-corner-all">go to google API</a>
-            <a href="fileSystem.html" class="ui-btn ui-btn-b ui-corner-all">Test File system</a>
-            <p></p>
+        <script>app.initialize();</script>
 	<script>
             document.getElementById("twitterLogin").addEventListener("click", twitterLogin, false);
             document.getElementById("googleLogin").addEventListener("click", googleLogin, false);
@@ -57,7 +52,8 @@
         </div><!-- /content -->
 
         <div data-role="footer">
-            <h4>Page Footer</h4>
+            <!--h4>Page Footer</h4-->
+            <h4></h4>
         </div><!-- /footer -->
     </div><!-- /page -->
 </body>

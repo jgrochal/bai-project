@@ -11,17 +11,7 @@ var firebaseConfig = {
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-
-//function logUser()
-//{
-//    var user = firebase.auth().currentUser;
-//
-//    if (user) {
-//        console.log(`Logged in ${result.user.uid}`);
-//    } else {
-//        console.log('No user logged in.');
-//    }
-//}
+const db = firebase.firestore();
 
 function emailRegister()
 {
@@ -31,6 +21,12 @@ function emailRegister()
   {
     // Actions after registration
   })
+}
+
+function signOut()
+{
+    firebase.auth().signOut();
+    window.location = 'index.html';
 }
 
 function emailLogin()
@@ -94,14 +90,6 @@ function dummyFuncToCallSelectFromDb(){
     console.log(getRecordsFromDbByUid("bl1"));
 }
 
-function testDb()
-{
-  insertIntoDb("bl1", "lat1", "long1", "href1");
-  insertIntoDb("bl2", "lat2", "long2", "href2");
-  insertIntoDb("bl3", "lat3", "long3", "href3");
-  insertIntoDb("bl4", "lat4", "long4", "href4");
-}
-
 function insertIntoDb(uid, latit, longt, link)
 {
   const time = + new Date(); 
@@ -113,13 +101,11 @@ function insertIntoDb(uid, latit, longt, link)
 
 
 function getRecordsFromDbByUid(uid){
-  const db = firebase.firestore();
   var queryResults = [];
   db.collection("users").where("user", "==", uid)
   .get()
   .then(function(querySnapshot) {
       querySnapshot.forEach(function(doc) {
-          // doc.data() is never undefined for query doc snapshots
           console.log(doc.id, " => ", doc.data());
           queryResults.push(doc.data());
       });
