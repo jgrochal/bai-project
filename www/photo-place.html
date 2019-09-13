@@ -74,6 +74,7 @@
                     .addEventListener("click", function(){ window.location = 'google-api.html';}, false);
                 document.getElementById("triggPhoto").addEventListener("click", function(){ triggPhoto(uid); }, false);
                 document.getElementById("triggRandPhoto").addEventListener("click", function(){ var randLoc = getRandomLocation(); triggRandPhoto(uid, randLoc.latitude, randLoc.longitude); }, false);
+                console.log(`User history: ${getRecordsFromDbByUid(uid)}`);
                             }
             else
             {
