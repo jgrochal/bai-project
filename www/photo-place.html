@@ -24,6 +24,7 @@
 <a id="signOut" class="ui-btn ui-btn-b ui-corner-all">Sign Out</a>
 <a id="switchMap" class="ui-btn ui-btn-b ui-corner-all">Switch to Map</a>
 <a id="triggPhoto" class="ui-btn ui-btn-b ui-corner-all">Load Pictures from Current Location</a>
+<a id="triggRandPhoto" class="ui-btn ui-btn-b ui-corner-all">Load Pictures from Random Location</a>
 
 
     <div id='slider' class='swipe'>
@@ -71,6 +72,9 @@
                 document.getElementById("switchMap")
                     .addEventListener("click", function(){ window.location = 'google-api.html';}, false);
                 document.getElementById("triggPhoto").addEventListener("click", function(){ triggPhoto(uid); }, false);
+                var randLoc = getRandomLocation();
+                console.log(`Random: ${randLoc}`);
+                document.getElementById("triggRandPhoto").addEventListener("click", function(){ triggRandPhoto(uid, randLoc); }, false);
             }
             else
             {

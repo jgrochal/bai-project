@@ -110,6 +110,7 @@ function onPicturesError(error) {
 }
 
 
+
 function triggPhoto(uid){
     console.log(`User id: ${uid}`);
     if(isTest){
@@ -117,6 +118,11 @@ function triggPhoto(uid){
     } else {
       getPicturesLocation(uid);
     }  
+}
+
+function triggRandPhoto(uid, loc)
+{
+//
 }
 
 // Get pictures by using coordinates
