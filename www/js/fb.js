@@ -57,9 +57,7 @@ function googleLogin()
         .then(function() { return firebase.auth().getRedirectResult(); })
         .then(function(result) 
         {
-            var token = result.credential.accessToken; 
-            var user = result.user;
-            console.log(`Logged in ${user.uid}`);
+            console.log(`Logged in ${result.user.uid}`);
             window.location = 'google-api.html';
         })
         .catch(function(error)
@@ -75,9 +73,7 @@ function twitterLogin(){
         .then(function() { return firebase.auth().getRedirectResult(); })
         .then(function(result) 
         {
-            var token = result.credential.accessToken; 
-            var user = result.user;
-            console.log(`Logged in ${user.uid}`);
+            console.log(`Logged in ${result.user.uid}`);
             window.location = 'google-api.html';
         })
         .catch(function(error)
